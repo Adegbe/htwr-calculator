@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <title>HtWR Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+    <h1>HtWR Result</h1>
+    <p>Age: {{ age }}</p>
+    <p>Nationality: {{ nationality }}</p>
+    <p>Gender: {{ gender }}</p>
+    <p>Your Height-to-Waist Ratio is: {{ htwr|round(2) }}</p>
+    {% if htwr > 0.5 %}
+        <p>A Height-to-Waist Ratio greater than 0.5 may indicate a higher risk of health problems.</p>
+    {% else %}
+        <p>A Height-to-Waist Ratio of 0.5 or lower is generally considered healthier.</p>
+    {% endif %}
+    <a href="/htwr">Calculate another HtWR</a>
+</div>
+</body>
+</html>
